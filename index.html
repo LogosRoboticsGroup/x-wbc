@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f1ec">
+  <meta name="description" content="X-WBC is a cross-embodiment foundation model for humanoid whole-body control, jointly trained across nine robot embodiments.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="X-WBC — Cross-Embodiment Humanoid Whole-Body Control">
+  <meta property="og:description" content="One shared motion backbone, trained across diverse humanoid bodies.">
+  <meta property="og:url" content="https://logosroboticsgroup.github.io/x-wbc/">
+  <meta property="og:image" content="https://logosroboticsgroup.github.io/x-wbc/assets/images/teaser.png">
+  <meta name="citation_title" content="X-WBC: A Cross-Embodiment Foundation Model for Humanoid Whole-Body Control">
+  <meta name="citation_author" content="Juntong Zhang">
+  <meta name="citation_author" content="Chun Gu">
+  <meta name="citation_author" content="Li Zhang">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="paper/xwbc-corl-2026.pdf">
+  <title>X-WBC — Cross-Embodiment Humanoid Whole-Body Control</title>
+  <link rel="canonical" href="https://logosroboticsgroup.github.io/x-wbc/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "X-WBC: A Cross-Embodiment Foundation Model for Humanoid Whole-Body Control",
+    "author": [
+      {"@type": "Person", "name": "Juntong Zhang"},
+      {"@type": "Person", "name": "Chun Gu"},
+      {"@type": "Person", "name": "Li Zhang"}
+    ],
+    "datePublished": "2026",
+    "publisher": {"@type": "Organization", "name": "Conference on Robot Learning"}
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="X-WBC home">
+      <span class="brand-mark" aria-hidden="true">X</span>
+      <span>X-WBC</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#idea">Idea</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <a href="#citation">Citation</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-shell">
+      <p class="eyebrow">CoRL 2026 · Austin, Texas</p>
+      <h1><span>X-WBC</span>A Cross-Embodiment Foundation Model for Humanoid Whole-Body Control</h1>
+      <p class="hero-deck">From isolated per-robot policies to a shared motion foundation model trained across diverse humanoid bodies.</p>
+
+      <div class="authors" aria-label="Authors">
+        <span>Juntong Zhang<sup>1,2</sup></span>
+        <span>Chun Gu<sup>2,3</sup></span>
+        <span>Li Zhang<sup>2,3,*</sup></span>
+      </div>
+      <p class="affiliations"><sup>1</sup>Tongji University · <sup>2</sup>Shanghai Innovation Institute · <sup>3</sup>Fudan University</p>
+
+      <div class="hero-actions">
+        <a class="action action-primary" href="paper/xwbc-corl-2026.pdf">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l4 4v16H6zM14 2v5h5M9 13h6M9 17h6"/></svg>
+          Paper
+        </a>
+        <span class="action action-muted" aria-disabled="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 7 8 5-8 5z"/></svg>
+          Video <small>soon</small>
+        </span>
+        <span class="action action-muted" aria-disabled="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.2-4-2-5-2.5m10 5v-3.1c0-.9.1-1.5-.4-2 3.2-.4 6.6-1.6 6.6-7A5.4 5.4 0 0 0 18.8 6 5 5 0 0 0 18.7 3S17.6 2.7 15 4a11.5 11.5 0 0 0-6 0C6.4 2.7 5.3 3 5.3 3A5 5 0 0 0 5.2 6a5.4 5.4 0 0 0-1.4 3.7c0 5.4 3.4 6.6 6.6 7-.5.5-.5 1.2-.4 2V22"/></svg>
+          Code <small>soon</small>
+        </span>
+      </div>
+
+      <div class="hero-media">
+        <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/teaser.png" aria-label="X-WBC real-world humanoid deployment highlights">
+          <source src="assets/videos/xwbc-hero.mp4" type="video/mp4">
+        </video>
+        <div class="media-shade" aria-hidden="true"></div>
+        <p class="media-label"><span>Real-world deployment</span> One interface, diverse bodies</p>
+        <button class="video-toggle" id="video-toggle" type="button" aria-label="Pause hero video" aria-pressed="false">
+          <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6v12M16 6v12"/></svg>
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6z"/></svg>
+        </button>
+      </div>
+
+      <div class="stat-strip" aria-label="Project highlights">
+        <div><strong>9</strong><span>robot embodiments</span></div>
+        <div><strong>1</strong><span>shared backbone</span></div>
+        <div><strong>3</strong><span>command routes</span></div>
+        <div><strong>4</strong><span>real humanoids</span></div>
+      </div>
+    </section>
+
+    <section class="idea section-shell reveal" id="idea">
+      <p class="section-kicker">The idea</p>
+      <div class="idea-grid">
+        <h2>Change the training unit.</h2>
+        <div>
+          <p class="lead">Human motion carries structure that can be shared across bodies. Physical execution cannot.</p>
+          <p>X-WBC separates reusable temporal motion semantics from embodiment-specific proprioception and action. Multiple humanoids roll out together, contribute to the same PPO updates, and optimize one shared motion Transformer.</p>
+        </div>
+      </div>
+      <figure class="image-frame teaser-frame">
+        <img src="assets/images/teaser.png" alt="Nine simulated humanoid embodiments and four real-world robots controlled through X-WBC" loading="lazy">
+        <figcaption>Cross-embodiment training in simulation and deployment on physically different humanoids.</figcaption>
+      </figure>
+    </section>
+
+    <section class="method section-shell reveal" id="method">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">How it works</p>
+          <h2>Shared meaning.<br>Specific execution.</h2>
+        </div>
+        <p>Three command routes describe the same underlying motion intent. A shared temporal backbone learns across robots; lightweight robot-specific modules make that intent executable.</p>
+      </div>
+
+      <figure class="image-frame method-figure">
+        <img src="assets/images/pipeline.png" alt="X-WBC architecture with command encoders, shared Transformer backbone, and robot-specific decoders" loading="lazy">
+      </figure>
+
+      <div class="feature-grid">
+        <article>
+          <span class="feature-index">01</span>
+          <h3>Human-centered commands</h3>
+          <p>Full human motion, retargeted robot motion, and sparse five-point VR observations are aligned in one command-token space.</p>
+        </article>
+        <article>
+          <span class="feature-index">02</span>
+          <h3>Temporal motion backbone</h3>
+          <p>A causal Transformer integrates command and proprioception histories, sharing motion experience across all active robots.</p>
+        </article>
+        <article>
+          <span class="feature-index">03</span>
+          <h3>Embodiment adapters</h3>
+          <p>Robot-specific state encoders and action decoders respect different morphologies, joint layouts, dynamics, and action spaces.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="results section-shell reveal" id="results">
+      <div class="section-heading results-heading">
+        <div>
+          <p class="section-kicker">Evidence</p>
+          <h2>Two evaluations.<br>Two distinct questions.</h2>
+        </div>
+        <p>Training-motion studies examine architecture and joint training. A separate frozen evaluation tests external locomotion styles without replacing the original analysis.</p>
+      </div>
+
+      <div class="evidence-tabs" role="tablist" aria-label="Evaluation track">
+        <button type="button" role="tab" aria-selected="true" aria-controls="training-panel" id="training-tab" data-panel="training-panel">Training motions</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="external-panel" id="external-tab" data-panel="external-panel">External 100STYLE</button>
+      </div>
+
+      <div class="evidence-panel training-panel is-active" id="training-panel" role="tabpanel" aria-labelledby="training-tab">
+        <div class="metric-copy">
+          <p class="metric-label">Table 1 · BONES-SEED training motions</p>
+          <p class="metric-value">98.60<span>%</span> <i>/</i> 93.22<span>%</span></p>
+          <h3>Full X-WBC · G1 / H2</h3>
+          <p>The shared Transformer achieves the strongest success rate on both evaluated embodiments. This is an in-distribution study of architecture and joint training—not an unseen-embodiment claim.</p>
+        </div>
+        <div class="training-comparison" aria-label="BONES-SEED success rate comparison for G1 and H2">
+          <div class="comparison-header" aria-hidden="true">
+            <span>Policy setting</span><span>G1 SR</span><span>H2 SR</span>
+          </div>
+          <div class="training-row is-highlighted">
+            <div><strong>X-WBC</strong><span>Shared Transformer · joint training</span></div>
+            <strong>98.60%</strong>
+            <strong>93.22%</strong>
+          </div>
+          <div class="training-row">
+            <div><strong>X-WBC (MLP)</strong><span>Shared MLP · joint training</span></div>
+            <strong>97.70%</strong>
+            <strong>91.33%</strong>
+          </div>
+          <div class="training-row">
+            <div><strong>Single robot</strong><span>Transformer · independent training</span></div>
+            <strong>97.69%</strong>
+            <strong>92.22%</strong>
+          </div>
+          <div class="training-insights">
+            <p><span>Command consistency</span>Robot, human, and sparse-VR routes remain closely matched.</p>
+            <p><span>Component evidence</span>Removing command routes, alignment, or robot-specific modules degrades both robots.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-panel" id="external-panel" role="tabpanel" aria-labelledby="external-tab" hidden>
+        <div class="metric-copy">
+          <p class="metric-label">100STYLE · 800 frozen clips · G1</p>
+          <p class="metric-value">91.13<span>%</span></p>
+          <p>X-WBC completes 729 clips through its sparse five-point VR interface. The comparison uses common scoring while each external system retains its native command interface and low-level controller.</p>
+        </div>
+        <div class="comparison-list" aria-label="100STYLE success rate comparison">
+          <div><span>X-WBC · VR5</span><strong>91.13%</strong><i style="--width:91.13%"></i></div>
+          <div><span>SONIC · SMPL</span><strong>93.00%</strong><i style="--width:93%"></i></div>
+          <div><span>TWIST · SMPL–GMR</span><strong>75.62%</strong><i style="--width:75.62%"></i></div>
+          <p>Success rate on the complete 100STYLE evaluation grid. Interfaces differ by system; see the paper for protocol and metric interpretation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="deployment section-shell reveal" id="deployment">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Real robots</p>
+          <h2>One command format.<br>Four bodies.</h2>
+        </div>
+        <p>The same sparse-VR command format controls Unitree G1, R1, H1-2, and H2, while robot-specific branches map shared motion features to each platform.</p>
+      </div>
+      <figure class="image-frame deployment-figure">
+        <img src="assets/images/deployment.png" alt="Real-world X-WBC deployment on Unitree G1, R1, H1-2, and H2" loading="lazy">
+        <figcaption>Qualitative real-world deployments across body scale and kinematic structure.</figcaption>
+      </figure>
+    </section>
+
+    <section class="abstract section-shell reveal" id="abstract">
+      <p class="section-kicker">Abstract</p>
+      <div class="abstract-grid">
+        <h2>A shared foundation for humanoid motion.</h2>
+        <p>Scaling humanoid whole-body control requires large motion corpora and experience shared across robot bodies. X-WBC introduces a cross-embodiment framework in which a shared motion Transformer learns reusable temporal structure, while lightweight robot-specific modules condition execution on each robot’s proprioception and action space. The framework aligns full human motion, robot reference motion, and sparse VR observations into human-centered command tokens and learns from mixed multi-robot rollouts. Simulation studies, external locomotion evaluation, token-space analysis, and deployment on four real humanoids support the feasibility of sharing a whole-body control backbone across bodies with different sizes and kinematics.</p>
+      </div>
+    </section>
+
+    <section class="citation section-shell reveal" id="citation">
+      <div class="citation-card">
+        <div>
+          <p class="section-kicker">Citation</p>
+          <h2>Build on X-WBC.</h2>
+          <p>Please cite our paper if you find this work useful.</p>
+        </div>
+        <div class="bibtex-wrap">
+          <button id="copy-bibtex" type="button">Copy BibTeX</button>
+          <pre id="bibtex"><code>@inproceedings{zhang2026xwbc,
+  title     = {X-WBC: A Cross-Embodiment Foundation Model
+               for Humanoid Whole-Body Control},
+  author    = {Zhang, Juntong and Gu, Chun and Zhang, Li},
+  booktitle = {Conference on Robot Learning},
+  year      = {2026}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <a class="brand footer-brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">X</span>
+        <span>X-WBC</span>
+      </a>
+      <p>Cross-embodiment humanoid whole-body control.</p>
+    </div>
+    <p>© 2026 X-WBC · Tongji University · Shanghai Innovation Institute · Fudan University</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
