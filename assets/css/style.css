@@ -22,9 +22,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at 86% 3%, rgba(103, 142, 216, 0.16), transparent 24rem),
-    var(--paper);
+  background: var(--paper);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 17px;
