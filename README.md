@@ -11,7 +11,7 @@ Paper coming soon · Code release coming soon
 
 </div>
 
-![X-WBC overview](assets/images/teaser.png)
+![X-WBC overview](docs/assets/images/teaser.png)
 
 > **Release status:** This repository currently hosts the official project page
 > and release announcement for X-WBC. The implementation, checkpoints, and
