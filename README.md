@@ -7,8 +7,7 @@
 **CoRL 2026**
 
 [Project Page](https://logosroboticsgroup.github.io/x-wbc/) ·
-[Paper](https://logosroboticsgroup.github.io/x-wbc/paper/xwbc-corl-2026.pdf) ·
-Code release coming soon
+Paper coming soon · Code release coming soon
 
 </div>
 
@@ -44,8 +43,9 @@ same sparse-VR interaction format on four physical humanoid platforms.
 
 The following checklist is tentative and may be refined during release review:
 
-- [x] Publish the project page and paper PDF.
+- [x] Publish the project page.
 - [x] Publish the full real-world demonstration reel.
+- [ ] Add the official paper link after publication.
 - [ ] Release the core training framework and environment configuration.
 - [ ] Release cross-embodiment rollout and policy configuration files.
 - [ ] Release motion preprocessing and retargeting utilities where licensing permits.
