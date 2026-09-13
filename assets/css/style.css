@@ -190,6 +190,7 @@ nav a:hover { color: var(--ink); }
 
 .action-primary { background: var(--ink); color: var(--white); }
 .action-primary:hover { background: var(--blue-dark); }
+.action-secondary:hover { border-color: rgba(24, 25, 27, 0.34); background: rgba(255, 255, 255, 0.46); }
 
 .action-muted { color: #68696e; cursor: default; }
 .action small { color: #86878b; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }

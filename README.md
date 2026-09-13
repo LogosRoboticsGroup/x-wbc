@@ -1,25 +1,89 @@
-# X-WBC Project Page
+# X-WBC
 
-Static project page for “X-WBC: A Cross-Embodiment Foundation Model for Humanoid Whole-Body Control.”
+<div align="center">
 
-## Preview locally
+### A Cross-Embodiment Foundation Model for Humanoid Whole-Body Control
 
-```sh
-python3 -m http.server 4173
+**CoRL 2026**
+
+[Project Page](https://logosroboticsgroup.github.io/x-wbc/) ·
+[Paper](https://logosroboticsgroup.github.io/x-wbc/paper/xwbc-corl-2026.pdf) ·
+Code release coming soon
+
+</div>
+
+![X-WBC overview](assets/images/teaser.png)
+
+> **Release status:** This repository currently hosts the official project page
+> and release announcement for X-WBC. The implementation, checkpoints, and
+> training assets are still being prepared for public release. Star or watch the
+> repository to follow future updates.
+
+## Overview
+
+X-WBC studies how humanoid whole-body control experience can be shared across
+robots with different morphologies, joint layouts, dynamics, and action spaces.
+It combines a shared temporal motion backbone with lightweight
+embodiment-specific modules, allowing multiple humanoids to contribute to one
+joint training process while retaining robot-specific execution.
+
+The framework supports three human-centered command routes—full human motion,
+retargeted robot motion, and sparse five-point VR observations—and is evaluated
+across nine simulated humanoid embodiments. We additionally demonstrate the
+same sparse-VR interaction format on four physical humanoid platforms.
+
+## Highlights
+
+- One shared motion Transformer trained with mixed multi-robot rollouts.
+- Robot-specific state encoders and action decoders for heterogeneous bodies.
+- Unified command tokens for human motion, robot references, and sparse VR.
+- Evaluation on nine simulated embodiments and deployment on four real robots.
+- Separate training-distribution studies and frozen external-style evaluation.
+
+## Planned Release
+
+The following checklist is tentative and may be refined during release review:
+
+- [x] Publish the project page and paper PDF.
+- [x] Publish the full real-world demonstration reel.
+- [ ] Release the core training framework and environment configuration.
+- [ ] Release cross-embodiment rollout and policy configuration files.
+- [ ] Release motion preprocessing and retargeting utilities where licensing permits.
+- [ ] Release simulation evaluation scripts and benchmark protocols.
+- [ ] Release selected pretrained checkpoints after verification.
+- [ ] Release sim-to-sim and real-robot deployment examples with safety guidance.
+- [ ] Publish installation instructions, tested dependency versions, and reproducibility notes.
+
+No source code or model weights are included yet. Please do not treat the
+current repository layout as the final software interface.
+
+## Citation
+
+If you find X-WBC useful, please cite:
+
+```bibtex
+@inproceedings{zhang2026xwbc,
+  title     = {X-WBC: A Cross-Embodiment Foundation Model
+               for Humanoid Whole-Body Control},
+  author    = {Zhang, Juntong and Gu, Chun and Zhang, Li},
+  booktitle = {Conference on Robot Learning},
+  year      = {2026}
+}
 ```
 
-Open `http://127.0.0.1:4173/`.
+## Institutions
 
-## Publish with GitHub Pages
+Tongji University · Fudan University · Shanghai Innovation Institute
 
-The public site is deployed from the `main` branch of
-[`LogosRoboticsGroup/x-wbc`](https://github.com/LogosRoboticsGroup/x-wbc):
+## License
 
-<https://logosroboticsgroup.github.io/x-wbc/>
+The license for the future code and model release has not yet been finalized.
+Unless stated otherwise, no license is granted for unreleased implementation or
+model artifacts.
 
-## Release checklist
+## Acknowledgements
 
-- Replace the temporary local hero clip with the final web-optimized reel.
-- Add public Video and Code URLs when available.
-- Confirm author links and final citation metadata.
-- Run desktop, mobile, Safari, Chrome, accessibility, and broken-link checks.
+We thank the authors and maintainers of the humanoid-learning community whose
+open research has made reproducible whole-body control possible. Detailed
+third-party acknowledgements and inherited licenses will accompany the code
+release.
