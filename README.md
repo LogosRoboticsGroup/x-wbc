@@ -1,8 +1,6 @@
-# X-WBC
+<h1 align="center">X-WBC: A Cross-Embodiment Foundation Model for Humanoid Whole-Body Control</h1>
 
 <div align="center">
-
-### A Cross-Embodiment Foundation Model for Humanoid Whole-Body Control
 
 **CoRL 2026**
 
