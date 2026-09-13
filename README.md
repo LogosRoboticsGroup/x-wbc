@@ -41,21 +41,12 @@ same sparse-VR interaction format on four physical humanoid platforms.
 
 ## Planned Release
 
-The following checklist is tentative and may be refined during release review:
+- [x] Project page and demo video.
+- [ ] Official paper link.
+- [ ] Training and evaluation code.
+- [ ] Checkpoints and deployment examples.
 
-- [x] Publish the project page.
-- [x] Publish the full real-world demonstration reel.
-- [ ] Add the official paper link after publication.
-- [ ] Release the core training framework and environment configuration.
-- [ ] Release cross-embodiment rollout and policy configuration files.
-- [ ] Release motion preprocessing and retargeting utilities where licensing permits.
-- [ ] Release simulation evaluation scripts and benchmark protocols.
-- [ ] Release selected pretrained checkpoints after verification.
-- [ ] Release sim-to-sim and real-robot deployment examples with safety guidance.
-- [ ] Publish installation instructions, tested dependency versions, and reproducibility notes.
-
-No source code or model weights are included yet. Please do not treat the
-current repository layout as the final software interface.
+Code and model weights are being prepared for release.
 
 ## Citation
 
