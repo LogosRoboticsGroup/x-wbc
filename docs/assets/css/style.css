@@ -150,6 +150,19 @@ nav a:hover { color: var(--ink); }
   font-weight: 650;
 }
 
+.authors a {
+  text-decoration-color: rgba(24, 25, 27, 0.3);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.authors a:hover,
+.authors a:focus-visible {
+  color: var(--blue-dark);
+  text-decoration-color: currentColor;
+}
+
 .authors sup, .affiliations sup { color: var(--blue-dark); }
 
 .affiliations {
