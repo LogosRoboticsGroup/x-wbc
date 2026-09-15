@@ -5,7 +5,8 @@
 **CoRL 2026**
 
 [Project Page](https://logosroboticsgroup.github.io/x-wbc/) ·
-Paper coming soon · Code release coming soon
+[Paper](https://arxiv.org/abs/2609.15213) ·
+[Repository](https://github.com/LogosRoboticsGroup/x-wbc)
 
 </div>
 
@@ -40,7 +41,7 @@ same sparse-VR interaction format on four physical humanoid platforms.
 ## Planned Release
 
 - [x] Project page and demo video.
-- [ ] Official paper link.
+- [x] Official paper link.
 - [ ] Training and evaluation code.
 - [ ] Checkpoints and deployment examples.
 
